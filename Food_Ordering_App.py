@@ -9,7 +9,7 @@ class Restaurent:
 # Admin functionalities
     def Add_Food_Items(self):
         try:
-            self.name = input("Enter the food name: ")
+            self.name = input("\nEnter the food name: ")
             self.quantity = float(input("Enter the quantity: "))
             self.price = float(input("Enter the price: ₹ "))
             self.stock = float(input("Enter the stock in Kg: "))
@@ -19,7 +19,7 @@ class Restaurent:
             self.food[self.food_id] = self.item
             print("\nFood Item: %s has been added successfully \n" %(self.food))
         except Exception as e:
-            print("\n *-------Something went wrong once again try entering!-------*")
+            print("\n*-------Food Item Was Not Added Please Try Again!-------*")
 
     def Remove_Food_Item(self):
         try:
@@ -32,7 +32,7 @@ class Restaurent:
             else:
                 print("Please enter a valid ID..!")
         except Exception as e:
-            print("\n *-------Something went wrong once again try entering!-------*")
+            print("\n*-------Food Item Was Not Removed Please Try Again-------*")
             
     def Edit_Food_Item(self):
         try:
@@ -64,18 +64,18 @@ class Restaurent:
             else:
                 print("Invalid Entry...!")
         except Exception as e:
-            print("\n *-------Something went wrong once again try entering!-------*")
+            print("\n *-------Food Item Was Not Updated Please Try Again-------*")
                            
     def Display_All_Food_Items(self):
         print("\nList of all food items present are:\n")
         if len(self.food) != 0:
             for i in self.food:
-                print("---> Food id :", i)
+                print("---> Food id \t:", i)
                 for j in self.food[i]:
                     print(j, ":", self.food[i][j])
                 print("\n")
         else:
-            print("No Food Item is added !!!!!!!\n")
+            print("No Food Item Is Added To The Menu!\n")
 
 #User Functionalities
     def User_Registeration(self):
@@ -95,7 +95,7 @@ class Restaurent:
                 break
 
         except Exception as e:
-            print("\n *-------Something went wrong once again try entering!-------*")
+            print("\n*-------Your Registration Was Unsuccessfull Please Try Again!-------*")
 
     def User_Login(self):
         try:
@@ -125,7 +125,7 @@ class Restaurent:
                     break
                 break
         except Exception as e:
-            print("\n!! Something went wrong please try again !!")  
+            print("\n*-------Your Login Was Unsuccessfull Please Try Again!-------*")
                     
     def Place_Order(self):
         try:
@@ -160,7 +160,7 @@ class Restaurent:
             else:
                 print("\nFood Items out of stock\n")
         except Exception as e:
-            print("\n!! Something went wrong please try again !!")
+            print("\n*-------Your Order Was Not Placed Please Try Again!-------*")
 
     def Ordered_History(self):
         print("\nList of last order items: ")
@@ -203,21 +203,21 @@ class Restaurent:
                 else:
                     print("\nPlease Give Valid Input\n")
         except Exception as e:
-            print("\n!! Something went wrong please try again !!")
+            print("\n*-------Your Profile Update Was Unsuccessfull Please Try Again!-------*")
 
 try:
     def main():
         Res_Name = "Prawin's"
         Object = Restaurent(Res_Name)
-        print("**--------------------- Greetings from %s Restaurant ---------------------**\n" %(Res_Name))
-        print("\n**----------------------------- Hola Amigos -----------------------------**\n")
+        print("**--------------------- Greetings from %s Restaurant ---------------------**" %(Res_Name))
+        print("\t**--------------------------- Hola Amigos ---------------------------**")
         while True:
             print("\n1. Admin\n2. User\n3. Exit")
-            num = int(input())
+            num = int(input("Choose an Option: "))
             if num == 1:
                 while True:
                     print("\n1. Add New Food Items\n2. Edit Food Items\n3. View Food Items \n4. Delete Food Items\n5. Exit")
-                    x = int(input())
+                    x = int(input("Choose a number: "))
                     if x == 1:
                         Object.Add_Food_Items()
                     elif x == 2:
@@ -248,12 +248,11 @@ try:
             else:
                 print("Invalid Number")
 except Exception as e:
-    print("something went wrong please give input carefully")
+    print("\n*-------Something Went Out Of Track Please Try Again!-------*")
             
-        # calling the main function 
+# calling the main function 
         
 if __name__ == "__main__":
     main()
     
 print("THANK YOU, PLEASE VISIT AGAIN.")
-                   
